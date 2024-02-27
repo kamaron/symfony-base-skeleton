@@ -3,6 +3,9 @@
 namespace App\Domain\Entity;
 
 use DateTime;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

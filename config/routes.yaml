@@ -1,0 +1,14 @@
+api_controllers:
+    resource:
+        path: ../src/UI/Http/Rest/Controller/
+        namespace: App\UI\Http\Rest\Controller
+    type: attribute
+
+#web_controllers:
+#    resource: '../src/UI/Http/Web/Controller/'
+#    type: annotation
+
+#health_check:
+#    path: /
+#    controller: App\Controller\HealthCheckController
+#    methods: [ GET ]

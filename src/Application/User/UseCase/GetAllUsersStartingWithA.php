@@ -4,7 +4,7 @@ namespace App\Application\User\UseCase;
 
 use App\Domain\Repository\UserRepositoryInterface;
 
-class GetAllUsers
+class GetAllUsersStartingWithA
 {
     private UserRepositoryInterface $userRepository;
 
@@ -13,9 +13,17 @@ class GetAllUsers
         $this->userRepository = $userRepository;
     }
 
+    /**
+     * @return User[]
+     */
     public function execute(): array
     {
-        return $this->userRepository->getAllUsers();
+        $allUsers = $this->userRepository->getAllUsers();
+        $filterUsers = array_filter($allUsers, function ($user) {
+            return strtoupper($user->getFirstName()[0]) === 'A';
+        });
+
+        return array_values($filterUsers);
     }
 
 
